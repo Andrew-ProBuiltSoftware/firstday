@@ -1,0 +1,190 @@
+.custom-checkbox-header {
+  .k-grid .k-table-th > .k-radio,
+  .k-grid .k-table-th > .k-radio-wrap,
+  .k-grid .k-table-th > .k-checkbox,
+  .k-grid .k-table-th > .k-checkbox-wrap,
+  .k-grid td > .k-radio,
+  .k-grid td > .k-radio-wrap,
+  .k-grid td > .k-checkbox,
+  .k-grid td > .k-checkbox-wrap,
+  .k-grid .k-table-td > .k-radio,
+  .k-grid .k-table-td > .k-radio-wrap,
+  .k-grid .k-table-td > .k-checkbox,
+  .k-grid .k-table-td > .k-checkbox-wrap {
+    vertical-align: middle;
+  }
+  .k-checkbox {
+    border-color: rgb(214, 214, 214);
+  }
+  .k-checkbox:checked,
+  .k-checkbox.k-checked {
+    border-color: #d6d6d6;
+  }
+  .k-grid .k-grid-header .k-table-th {
+    vertical-align: middle;
+    text-align: center;
+  }
+  &.k-grid {
+    border-width: 0px;
+  }
+}
+
+// .k-grid.payruns-grid .k-table-tfoot td {
+//     text-align: right;
+//     height: 41px;
+//     padding: 0;
+//   }
+
+//   .k-grid.payruns-grid .k-table-tbody .k-table-row.k-selected {
+//     background-color: #8096c1 !important;
+//     color: #424242 !important;
+//   }
+
+//   .k-grid.payruns-grid {
+//     border-width: 1px !important;
+//   }
+
+//   .k-grid.payruns-grid .k-table-tbody .k-table-row:hover {
+//     background-color: #abb9d6 !important;
+//     color: #424242 !important;
+
+//     td {
+//       background-color: inherit;
+//     }
+//   }
+
+//   .k-grid.payruns-grid .k-table-tbody .k-table-row {
+//     td input:focus {
+//       background-color: #abb9d6 !important;
+//     }
+//   }
+
+//   .k-grid.payruns-grid .k-table-thead .k-table-row {
+//     th input:focus {
+//       background-color: #abb9d6 !important;
+//     }
+//   }
+
+//   .payruns-grid{
+//     .k-grid{
+//       border-width: 0px !important;
+//     }
+//   }
+
+.payroll {
+  .k-window-content {
+    padding: 0 !important;
+  }
+}
+
+.payroll-personnel-modal {
+  .k-grid {
+    border-width: 1px;
+  }
+}
+
+.custom-grid-header {
+  .k-checkbox-wrap {
+    margin-left: 0;
+  }
+  .k-table-thead {
+    .k-table-th {
+      vertical-align: middle;
+      text-align: center;
+    }
+  }
+}
+
+.listing-title-bar .custom-icon {
+  @apply flex
+           border-0
+           items-center
+           justify-center
+           h-[25px]
+           w-[25px]
+           transition-transform
+           ease-out
+           duration-100
+           hover:bg-[#e6e6e6] 
+           hover:text-black
+           rounded;
+}
+
+.dropdown-svg {
+  display: flex;
+  flex-direction: row;
+  svg {
+    height: 20px;
+    width: 20px;
+  }
+}
+
+.custom-icon-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.custom-icon-btn svg {
+  height: 20px;
+  width: 20px;
+}
+
+.custom-icon-btn:hover {
+  background: #e6e6e6;
+  cursor: pointer;
+}
+
+.custom-icon-btn:focus {
+  outline: none;
+  background: #cfcfcf;
+}
+
+.k-grid.payrun-listing-grid .k-table-tbody .k-table-row.k-selected {
+  background-color: #8096c1 !important;
+  color: #424242 !important;
+}
+
+.k-grid.payrun-listing-grid {
+  border-width: 0px !important;
+}
+
+.k-grid.payrun-listing-grid .k-table-tbody .k-table-row:hover {
+  background-color: #abb9d6 !important;
+  color: #424242 !important;
+
+  td {
+    background-color: inherit;
+  }
+}
+
+.k-grid.payrun-listing-grid .k-table-tbody .k-table-row {
+  td input:focus {
+    background-color: #abb9d6 !important;
+  }
+}
+
+.k-grid.payrun-listing-grid .k-table-thead .k-table-row {
+  th input:focus {
+    background-color: #abb9d6 !important;
+  }
+}
+
+.k-grid.payrun-listing-grid .k-table-td.footer {
+  border-color: #ffffff !important;
+}
+
+.k-grid.payrun-listing-grid .k-table-tfoot td {
+  border-block-end-color: transparent !important;
+  border-inline-start-color: transparent !important;
+  text-align: left;
+  height: 35px;
+  padding: 0;
+}
+
+.k-grid.payrun-listing-grid .k-table-tbody .k-table-row.k-selected {
+  background-color: #8096c1 !important;
+  color: #424242 !important;
+}

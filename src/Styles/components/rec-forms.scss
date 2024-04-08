@@ -1,0 +1,29 @@
+.recs {
+  .paymentbutton .k-button:hover,
+  .paymentbutton .k-button:focus,
+  .k-time-accept:hover,
+  .k-time-accept:focus {
+    background-color: #cf6720 !important;
+  }
+
+  .paymentbutton .k-button {
+    color: #ffffff !important;
+    // background-color: #000000;
+  }
+  .newbutton .k-button {
+    color: #ffffff !important;
+    // background-color: #000000;
+  }
+
+  .k-label.k-text-disabled,
+  .k-disabled .k-input-inner {
+    color: #424242 !important;
+  }
+  .k-textbox.k-input .k-input-inner:read-only,
+  .k-numerictextbox.k-input .k-input-inner:read-only {
+    text-align: center;
+    color: #3f48cc !important;
+    pointer-events: none;
+    padding: 0 8px !important;
+  }
+}

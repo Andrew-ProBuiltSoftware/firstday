@@ -1,0 +1,11 @@
+#root {
+  margin: 0 auto;
+  display: grid;
+  text-align: center;
+  background-color: #f1f5f9;
+  font-family: Inter, sans-serif;
+}
+
+body {
+  background-color: #f1f5f9;
+}

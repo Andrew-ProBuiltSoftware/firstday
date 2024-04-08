@@ -1,0 +1,55 @@
+.customized-datepicker {
+  .k-input-inner {
+    padding-left: 8px !important;
+    padding-right: 0px !important;
+    text-align: center !important;
+  }
+
+  // .k-button.k-input-button {
+  //   display: none !important;
+  // }
+}
+
+.custom-date-picker-popup {
+  button {
+    border-radius: 0.4em;
+    transition: background-color 150ms ease-out;
+  }
+
+  button:hover:not(:disabled) {
+    background-color: rgba(1, 1, 1, 0.1);
+  }
+
+  button:disabled {
+    pointer-events: none;
+  }
+
+  button:focus:not(:disabled) {
+    background-color: rgba(1, 1, 1, 0.3);
+  }
+
+  button:active:not(:disabled) {
+    background-color: rgba(1, 1, 1, 0.3);
+  }
+
+  button:disabled {
+    color: rgba(1, 1, 1, 0.3);
+  }
+
+  .selected {
+    background-color: #6f67ff !important;
+    color: white !important;
+
+    &:hover {
+      background-color: #4f48db !important;
+    }
+  }
+
+  #calendar-today-button {
+    color: #6f67ff;
+
+    &:hover {
+      background-color: hsla(243, 100%, 70%, 0.238);
+    }
+  }
+}

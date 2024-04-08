@@ -1,0 +1,61 @@
+/* Tailwind CSS */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* telerik */
+@import '@progress/kendo-theme-material/dist/all.css';
+
+/* Fonts */
+@import './fonts.scss';
+
+/* Telerik Custom */
+@import './custom.scss';
+
+/* home page */
+@import './home.scss';
+
+/* components */
+
+@import './components/listing-view.scss';
+
+#viewer-host {
+  width: 100%;
+  height: 100vh;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  position: relative;
+  z-index: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Inter, sans-serif;
+}
+
+.highlight {
+  color: #3f48cc;
+  background: white;
+}
+
+label,
+.k-label {
+  user-select: none;
+}

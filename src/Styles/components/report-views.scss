@@ -1,0 +1,31 @@
+.report-viewer {
+  .k-window-content {
+    padding: 0 !important;
+    overflow: auto;
+  }
+
+  .gc-menu-panel,
+  .gc-sidebar-panel {
+    .gc-btn--accent {
+      background-color: #205f78 !important;
+    }
+
+    .gc-btn--accent:hover {
+      opacity: 0.9;
+    }
+  }
+}
+
+.toolbar-icon {
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.icon-rotate-portrait {
+  background-image: url(../../../public/images/icon-to-portrait.svg);
+}
+
+.icon-rotate-landscape {
+  background-image: url(../../../public/images/icon-to-landscape.svg);
+}

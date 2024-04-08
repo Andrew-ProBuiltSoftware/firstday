@@ -1,0 +1,23 @@
+.k-expander {
+  width: 800px;
+}
+
+.k-expander-title {
+  color: White;
+  font-weight: bold;
+  text-transform: none;
+  font-size: large;
+}
+
+.k-expander-header {
+  background-color: #636363;
+}
+
+.k-expander-header:hover {
+  background-color: #212121;
+}
+
+.k-expander-content {
+  display: flex;
+  justify-content: center;
+}

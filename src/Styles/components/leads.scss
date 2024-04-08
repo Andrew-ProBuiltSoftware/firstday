@@ -1,0 +1,32 @@
+span.vertical-behind {
+  position: relative;
+  height: 150px;
+  width: 67px;
+  display: block;
+  text-align: center;
+  margin: 10px auto;
+  padding-top: 65px;
+}
+span.vertical-behind:before {
+  border-left: 2px solid #d6d6d6;
+  content: '';
+  display: block;
+  height: 60px;
+  left: 32px;
+  top: 0;
+  width: 1px;
+  z-index: 0;
+  position: absolute;
+}
+
+span.vertical-behind:after {
+  border-left: 2px solid #d6d6d6;
+  content: '';
+  display: block;
+  height: 60px;
+  left: 32px;
+  top: 92px;
+  width: 1px;
+  z-index: 0;
+  position: absolute;
+}

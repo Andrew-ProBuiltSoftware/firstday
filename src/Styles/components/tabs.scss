@@ -1,0 +1,61 @@
+@import 'react-tabs/style/react-tabs.css';
+
+.react-tabs {
+  @apply h-full relative;
+}
+
+.react-tabs__tab-list {
+  @apply mb-0 border-0;
+
+  .react-tabs__tab {
+    @apply h-[32px]
+           text-sm
+           bg-[#f1f1f3]
+           text-black
+           w-[190px]
+           text-center
+           bottom-0
+           mr-0.5;
+
+    &:focus::after {
+      @apply hidden;
+    }
+
+    &.react-tabs__tab--selected {
+      @apply bg-[#5a7699] text-white rounded-none;
+    }
+  }
+}
+
+.react-tabs__tab-panel {
+  @apply block
+         w-full
+         h-[calc(100%_-_32px)]
+         absolute
+         top-[32px]
+         left-0
+         border-y-2
+         border-x
+         border-y-[#5a7699]
+         px-5
+         py-4
+         space-y-3
+         z-0
+         opacity-0;
+}
+
+.custom-tabs-panel {
+  @apply block
+         w-full
+         h-[calc(100%_-_32px)]
+         absolute
+         border-2
+         border-[#5a7699]
+         border-x-0
+         z-0
+         opacity-0;
+}
+
+.react-tabs__tab-panel--selected {
+  @apply z-[1] opacity-100;
+}

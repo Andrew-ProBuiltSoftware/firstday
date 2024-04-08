@@ -1,0 +1,128 @@
+.listing-view-container {
+  @apply border
+        border-[#d6d6d6]
+        w-full
+        h-full
+        grid
+        grid-rows-[auto_1fr]
+        gap-2
+        overflow-hidden;
+}
+
+.listing-title-bar {
+  @apply flex
+         items-center
+         justify-between
+         pl-5
+         pr-5
+         py-[5px]
+         bg-[#fafafa]
+         border-b
+         border-gray-300;
+}
+.listing-title-bar
+  .custom-dropdown
+  .k-floating-label-container:not(.k-empty)
+  > .k-label,
+.listing-title-bar
+  .custom-dropdown
+  .k-floating-label-container.k-focus
+  > .k-label {
+  @apply hidden;
+}
+.listing-title-bar div > div > .listing-action-button:hover {
+  background-color: #2c5098 !important;
+}
+
+.button-active {
+  background-color: #2c5098 !important;
+  color: white;
+}
+
+.listing-title-bar .listing-action-button {
+  @apply flex
+         border-0
+         items-center
+         justify-center
+         h-[30px]
+         w-[50px]
+         transition-transform
+         ease-out
+         duration-100
+         hover:bg-[#2c5098] 
+         hover:text-white
+         rounded;
+}
+
+// .listing-action-button.move-button {
+//   @apply border-0
+//          aspect-square
+//          basis-0
+//          hover:bg-transparent
+//          hover:text-[#2c5098]
+// }
+
+.listing-action-button.close-button {
+  @apply border-0 
+         hover:bg-[#f14e4e]
+         hover:text-white;
+}
+
+.listing-action-seperate-line {
+  @apply w-[1px]
+         h-[30px]
+         bg-gray-300;
+}
+
+.listing-view-container .k-grid.listing-grid {
+  border-left-width: 0px !important;
+  border-right-width: 0px !important;
+}
+
+.k-grid.form-listing-grid {
+  border-left-width: 1px !important;
+  border-right-width: 1px !important;
+}
+
+.k-grid.listing-grid .k-table-tbody .k-table-row {
+  cursor: pointer !important;
+  /* border-color: transparent !important; */
+}
+.k-grid.listing-grid .k-table-tbody .k-table-row:hover {
+  background-color: #abb9d6 !important;
+  color: #424242 !important;
+
+  td {
+    background-color: inherit;
+  }
+}
+.k-grid.listing-grid .k-table-tbody .k-table-row.k-selected {
+  background-color: #8096c1 !important;
+  color: white !important;
+}
+
+.k-grid.listing-grid .k-table-tbody .k-table-row:not(:last-child) .k-table-td {
+  border-block-end-color: transparent !important;
+}
+.k-grid.listing-grid .k-table-tfoot td {
+  border-block-end-width: 0;
+  border-inline-start-color: transparent !important;
+  text-align: left;
+  height: 35px;
+  padding: 0;
+}
+.k-grid.listing-grid .k-sort-icon {
+  position: absolute;
+  right: -3px;
+  color: #2c5098;
+}
+
+.k-grid-header {
+  background-color: #fafafa;
+}
+
+// For fixing border issue in last nested column header
+
+.border-inline-end-1 {
+  border-inline-end-width: 1px !important;
+}

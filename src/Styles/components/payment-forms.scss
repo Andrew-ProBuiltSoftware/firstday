@@ -1,0 +1,225 @@
+.invoice-payment-td {
+  background-color: #ffffff;
+}
+
+.k-grid.invoice-payment-grid .k-table-tfoot td {
+  text-align: center;
+  height: 22px;
+  padding: 0;
+}
+
+.k-grid.invoice-payment-grid .k-table-tbody .k-table-row.k-selected {
+  background-color: #8096c1 !important;
+  color: #424242 !important;
+}
+
+.k-grid.invoice-payment-grid {
+  border-width: 1px !important;
+}
+
+.k-grid.invoice-payment-grid .k-table-tbody .k-table-row:hover {
+  background-color: #abb9d6 !important;
+  color: #424242 !important;
+
+  td {
+    background-color: inherit;
+  }
+}
+
+.k-grid.invoice-payment-grid .k-table-tbody .k-table-row {
+  td input:focus {
+    background-color: #abb9d6 !important;
+  }
+}
+
+.k-grid.invoice-payment-grid .k-table-thead .k-table-row {
+  th input:focus {
+    background-color: #abb9d6 !important;
+  }
+}
+
+.k-grid.invoice-payment-grid.modal .k-table-thead {
+  th {
+    padding-top: 1px;
+    // background-color: #e01616 !important;
+  }
+}
+
+.k-grid.invoice-payment-grid .k-table-td.footer {
+  border-color: #ffffff !important;
+}
+
+.invoicepayment {
+  .paymentbutton .k-button:hover,
+  .paymentbutton .k-button:focus,
+  .k-time-accept:hover,
+  .k-time-accept:focus {
+    background-color: #cf6720 !important;
+  }
+
+  .paymentbutton .k-button {
+    color: #ffffff !important;
+    // background-color: #000000;
+  }
+
+  .newbutton .k-button {
+    color: #ffffff !important;
+    // background-color: #000000;
+  }
+
+  .k-label.k-text-disabled,
+  .k-disabled .k-input-inner {
+    color: #424242 !important;
+  }
+  .k-textbox.k-input .k-input-inner:read-only,
+  .k-numerictextbox.k-input .k-input-inner:read-only {
+    text-align: inherit;
+    color: #3f48cc;
+    pointer-events: none;
+    padding: 0 8px !important;
+  }
+}
+
+.bill-payment-td {
+  background-color: #ffffff;
+}
+
+.k-grid.bill-payment-grid .k-table-tfoot td {
+  text-align: right;
+  height: 22px;
+  padding: 0;
+}
+
+.k-grid.bill-payment-grid .k-table-tbody .k-table-row.k-selected {
+  background-color: #8096c1 !important;
+  color: #424242 !important;
+}
+
+.k-grid.bill-payment-grid {
+  border-width: 1px !important;
+}
+
+.k-grid.bill-payment-grid .k-table-tbody .k-table-row:hover {
+  background-color: #abb9d6 !important;
+  color: #424242 !important;
+
+  td {
+    background-color: inherit;
+  }
+}
+
+.k-grid.bill-payment-grid .k-table-tbody .k-table-row {
+  td input:focus {
+    background-color: #abb9d6 !important;
+  }
+}
+
+.k-grid.bill-payment-grid .k-table-thead .k-table-row {
+  th input:focus {
+    background-color: #abb9d6 !important;
+  }
+}
+
+.k-grid.bill-payment-grid.modal .k-table-thead {
+  th {
+    padding-top: 1px;
+    // background-color: #e01616 !important;
+  }
+}
+
+.k-grid.bill-payment-grid.modal
+  .k-table-row:first-child
+  .k-table-th:first-child
+  > .k-cell-inner
+  > .k-link,
+.k-grid td,
+.k-grid .k-table-td {
+  justify-content: left;
+  margin-left: 8px;
+  .k-column-title {
+    color: #2c5098;
+  }
+}
+
+.k-grid.bill-payment-grid .k-table-td.footer {
+  border-color: #ffffff !important;
+}
+
+.billpayment {
+  .paymentbutton .k-button:hover,
+  .paymentbutton .k-button:focus,
+  .k-time-accept:hover,
+  .k-time-accept:focus {
+    background-color: #cf6720 !important;
+  }
+
+  .paymentbutton .k-button {
+    color: #ffffff !important;
+    // background-color: #000000;
+  }
+  .newbutton .k-button {
+    color: #ffffff !important;
+    // background-color: #000000;
+  }
+
+  .k-label.k-text-disabled,
+  .k-disabled .k-input-inner {
+    color: #424242 !important;
+  }
+  .k-textbox.k-input .k-input-inner:read-only,
+  .k-numerictextbox.k-input .k-input-inner:read-only {
+    text-align: center;
+    color: #3f48cc !important;
+    pointer-events: none;
+    padding: 0 8px !important;
+  }
+}
+
+.adjust-payment {
+  .k-window-content {
+    padding: 0px !important;
+  }
+}
+
+.paymentlabels .k-label {
+  font-size: 13px;
+}
+
+.invoicepayment .appliedpayments .k-label {
+  font-size: 13px;
+}
+
+.billpayment .appliedpayments .k-label {
+  font-size: 13px;
+}
+
+.bulkgenericdialog {
+  .k-grid .k-grid-header {
+    border-bottom-width: 0px;
+  }
+
+  .k-grid-md .k-table-th {
+    padding-block: 0px;
+  }
+  .k-grid-content .k-table-row:last-child > td,
+  .k-grid-content .k-table-row:last-child > .k-table-td {
+    border-bottom-width: 0px;
+  }
+  .k-grid-content .k-table-row > .k-table-td:not(:last-child),
+  .k-grid-content .k-table-row > td:not(:last-child),
+  .k-grid .k-table-th:not(:last-child) {
+    border-inline-end-width: 0px;
+  }
+  .k-table-row.k-master-row .k-table-sm,
+  .k-table-row.k-master-row p,
+  .k-table-row.k-master-row td,
+  .k-table-row.k-master-row input:not(.k-checkbox),
+  .k-table-row.k-master-row .k-input {
+    font-size: 11px !important;
+    line-height: 2 !important;
+    height: 20px !important;
+  }
+  .k-grid .k-table-row.k-table-alt-row {
+    background-color: #ffffff;
+  }
+}

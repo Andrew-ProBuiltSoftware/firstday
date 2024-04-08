@@ -1,0 +1,37 @@
+.k-grid.selectable-grid .k-table-tbody .k-table-row {
+  cursor: pointer !important;
+  /* border-color: transparent !important; */
+}
+.k-grid.selectable-grid .k-table-tbody .k-table-row:hover {
+  background-color: #e3f3f9 !important;
+  color: #424242 !important;
+}
+.k-grid.selectable-grid .k-table-tbody .k-table-row.k-selected {
+  background-color: #8096c1 !important;
+  color: white !important;
+}
+
+.k-grid.selectable-grid
+  .k-table-tbody
+  .k-table-row:not(:last-child)
+  .k-table-td {
+  border-block-end-color: transparent !important;
+}
+.k-grid.selectable-grid .k-table-tfoot td {
+  border-block-end-width: 0;
+  border-inline-start-color: transparent !important;
+  text-align: left;
+  height: 35px;
+  padding: 0;
+}
+.k-grid.selectable-grid .k-sort-icon {
+  position: absolute;
+  right: -3px;
+  color: #2c5098;
+}
+
+// For fixing border issue in last nested column header
+
+.border-inline-end-1 {
+  border-inline-end-width: 1px !important;
+}

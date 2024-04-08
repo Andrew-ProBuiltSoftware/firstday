@@ -1,0 +1,170 @@
+.main-form-container {
+  @apply w-full h-fit;
+}
+
+.form-footer {
+  font-weight: 500;
+  color: #424242;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 32px;
+  height: 30px;
+  border-top: 2px solid #b1b1b1d9;
+  margin: 0 -15px;
+  padding: 0 15px;
+  font-size: 12px;
+
+  .capitalize {
+    text-transform: capitalize;
+  }
+}
+
+.credit-pay-form-footer {
+  span {
+    display: inline !important;
+  }
+}
+
+.form-address-wrapper {
+  padding: 4px;
+  display: flex;
+  min-height: 48px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  p {
+    text-align: left;
+    line-height: 20px;
+    font-size: 12px;
+    height: 20px;
+  }
+
+  p.two-row {
+    height: 40px;
+  }
+}
+
+.form-total-amount-wrapper {
+  align-self: center;
+  width: 130px;
+  height: 100%;
+  flex-shrink: 0;
+  border-width: 0;
+  border-left-width: 1px;
+  border-color: #377d22;
+  border-style: solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  p {
+    text-align: center;
+  }
+}
+
+.form-total-amount-grid {
+  display: grid;
+  grid-template-columns: 150px 150px;
+  border: 1px solid #d6d6d6;
+  margin: 10px 0;
+
+  p {
+    text-align: center;
+    border: 1px solid #d6d6d6;
+  }
+
+  p:nth-child(even) {
+    border-left-width: 0;
+  }
+
+  .title {
+    line-height: 20px;
+    border-bottom-width: 0;
+  }
+
+  .highlight {
+    line-height: 19px;
+  }
+}
+
+// Invoice form
+
+.k-floating-label-container.k-empty.invoice-num-center > .k-label {
+  transform: scale(1) translate(27%, -50%) !important;
+}
+.k-floating-label-container.invoice-num-center > .k-label,
+.k-floating-label-container.k-focus.invoice-num-center > .k-label {
+  transform: scale(0.75) translateY(-50%) !important;
+}
+
+.k-floating-label-container.k-empty.invoice-bill-disc-amt-center > .k-label {
+  transform: scale(1) translate(23%, -50%) !important;
+}
+.k-floating-label-container.invoice-bill-disc-amt-center > .k-label,
+.k-floating-label-container.k-focus.invoice-bill-disc-amt-center > .k-label {
+  transform: scale(0.75) translateY(-50%) !important;
+}
+
+.k-floating-label-container.k-empty.invoice-bill-disc-date-center > .k-label {
+  transform: scale(1) translate(18%, -50%) !important;
+}
+.k-floating-label-container.invoice-bill-disc-date-center > .k-label,
+.k-floating-label-container.k-focus.invoice-bill-disc-date-center > .k-label {
+  transform: scale(0.75) translateY(-50%) !important;
+}
+
+.k-floating-label-container.k-empty.invoice-bill-due-date-center > .k-label {
+  transform: scale(1) translate(19%, -50%) !important;
+}
+.k-floating-label-container.invoice-bill-due-date-center > .k-label,
+.k-floating-label-container.k-focus.invoice-bill-due-date-center > .k-label {
+  transform: scale(0.75) translateY(-50%) !important;
+}
+
+// Bill form
+.k-floating-label-container.k-empty.bill-num-center > .k-label {
+  transform: scale(1) translate(20%, -50%) !important;
+}
+
+.k-floating-label-container.bill-num-center > .k-label,
+.k-floating-label-container.k-focus.bill-num-center > .k-label {
+  transform: scale(0.75) translateY(-50%) !important;
+}
+
+.custom-fields-form {
+  // & .k-input {
+  //   height: 38px !important;
+  // }
+
+  & .custom-checkbox-input .k-checkbox {
+    border: 2px solid #d6d6d6;
+    width: 20px;
+    height: 20px;
+
+    &:focus {
+      border: 2px solid #2c5098 !important;
+    }
+
+    & .custom-time-only-input {
+      text-align: center !important;
+    }
+  }
+}
+
+.custom-form-footer {
+  font-weight: 500;
+  color: #424242;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  // gap: 32px;
+  // margin: 0 -15px;
+  // padding: 0 15px;
+  font-size: 12px;
+
+  .capitalize {
+    text-transform: capitalize;
+  }
+}
