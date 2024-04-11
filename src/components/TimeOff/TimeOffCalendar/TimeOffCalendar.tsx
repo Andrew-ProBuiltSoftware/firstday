@@ -9,6 +9,10 @@ type CalendarData = {
   year: number;
 };
 
+type OnNextButtonProps = {
+
+}
+
 const TimeOffCalendar = () => {
   const min = undefined;
   const max = undefined;
@@ -56,7 +60,7 @@ const TimeOffCalendar = () => {
     }
   };
 
-  const onPrevButton = () => {
+const onPrevButton = () => {
     if (calendarScreen === CalendarScreen.Date) {
       setCalendarData((prev) => ({
         ...prev,
@@ -123,7 +127,7 @@ const TimeOffCalendar = () => {
               : 'pointer-events-auto'
           }`}
         >
-          <h1 className="text-2xl font-bold">
+          <h1 className="text-2xl font-normal">
             {calendarScreen === CalendarScreen.Date
               ? `${moment().month(calendarData.month).format('MMMM')} ${
                   calendarData.year
@@ -429,7 +433,7 @@ const DateScreen = ({
           todaysStyle === '' ? dayStyleAndEvent().dayStyle : todaysStyle
         }`}
       >
-        <div className="h-[25%] text-left pl-1 font-semibold">
+        <div className="h-[25%] text-left pl-1 font-normal">
           {day}
           {date === today ? ' - Today' : ''}
         </div>
@@ -502,7 +506,7 @@ DateScreen.DayLabels = () => {
     <div className="flex w-full">
       {labels.map((label) => {
         return (
-          <span className="text-sm font-semibold text-gray-400 w-[14.2%] text-center">
+          <span className="text-sm font-bold text-gray-400 w-[14.2%] text-center">
             {label}
           </span>
         );

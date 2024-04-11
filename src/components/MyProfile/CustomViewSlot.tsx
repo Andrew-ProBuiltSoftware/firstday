@@ -26,7 +26,7 @@ export const CustomViewSlot = (props: CustomViewSlotProps) => {
   };
 
   const grayOutDaysLabel =
-    currentMonth !== displayMonth ? 'text-slate-300 font-normal' : 'font-bold';
+    currentMonth !== displayMonth ? 'text-slate-300 font-normal' : 'font-normal';
   return showRequestModal ? (
     <Form
       setShowRequestOffModal={setShowRequestOffModal}
@@ -37,7 +37,7 @@ export const CustomViewSlot = (props: CustomViewSlotProps) => {
   ) : (
     <SchedulerViewSlot
       {...props}
-      className={`h-[107px] ${grayOutDaysLabel} hover:cursor-pointer`}
+      className={`h-[185px] ${grayOutDaysLabel} hover:cursor-pointer`}
       onDoubleClick={(e) => handleShowModal(e)}
       id={props.id}
       fetchRequestsData={fetchRequestsData}

@@ -120,25 +120,29 @@ const TimeOff = () => {
   }, [selectedMonth]);
 
   return (
-    <div className="flex w-full h-[1000px] overflow-hidden justify-around pt-[50px]">
+    <div className="flex w-full h-[1193px] overflow-hidden justify-around pt-[50px] border border-slate-300 gap-2">
      
-      <MyScheduler
-        selectedMonth={selectedMonth}
-        setSelectedMonth={setSelectedMonth}
-        calendarPTOdata={calendarPTOdata}
-        isLoading={isLoading}
-        holidays={holidays}
-        fetchRequestsData={fetchData}
-      />
-       <TimeOffRequests
-        data={timeOffRequestData}
-        fetchData={fetchData}
-        isLoading={isLoading}
-        setData={setTimeOffRequestData}
-      />
-   
-    </div>
+        <MyScheduler
+           selectedMonth={selectedMonth}
+           setSelectedMonth={setSelectedMonth}
+           calendarPTOdata={calendarPTOdata}
+           isLoading={isLoading}
+           holidays={holidays}
+           fetchRequestsData={fetchData}
+         />
+
+        <TimeOffRequests
+          data={timeOffRequestData}
+          fetchData={fetchData}
+          isLoading={isLoading}
+          setData={setTimeOffRequestData}
+         />
+      </div>
+    
   );
 };
 
 export default TimeOff;
+
+
+    {/**flex w-full h-[1240px] overflow-hidden justify-around pt-[50px]**/}

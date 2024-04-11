@@ -115,7 +115,7 @@ export const TimeOffRequests: React.FC<TimeOffRequestsProps> = ({
   };
 
   return (
-    <div className=" w-[420px] h-[797px] mr-[10px]">
+    <div className=" w-full min-w-[400px] max-w-screen h-[1085px] mr-[10px]">
       {showRequestOffModal && (
         <Form
           IDNo={IDNo}
@@ -154,7 +154,7 @@ export const TimeOffRequests: React.FC<TimeOffRequestsProps> = ({
           }}
         />
       </SubGridListingTitleBar>
-      <div className="h-[7px] border-x border-slate-300 bg-white"></div>
+      <div className="h-[7px]  bg-white"></div>
       {isLoading ? (
         <Loader />
       ) : (
@@ -190,7 +190,7 @@ export const TimeOffRequests: React.FC<TimeOffRequestsProps> = ({
             <Column
               field="DateRange"
               title="Date"
-              width={120}
+              width={100}              
               className="text-center"
             />
             <Column
@@ -202,7 +202,7 @@ export const TimeOffRequests: React.FC<TimeOffRequestsProps> = ({
             <Column
               field="TimeRange"
               title="Time"
-              width={120}
+              width={100}
               className="text-center"
             />
             <Column
@@ -210,6 +210,11 @@ export const TimeOffRequests: React.FC<TimeOffRequestsProps> = ({
               title="Status"
               width={100}
               className="text-left"
+            />
+            <Column 
+              field='NoteSection'
+              title='Notes'
+              className='text-left'
             />
           </ListingGrid>
           <ListingGridContextMenu

@@ -1,4 +1,4 @@
-import React, { useState, Dispatch } from 'react';
+import React, { useState, Dispatch, useEffect } from 'react';
 import { Scheduler, MonthView } from '@progress/kendo-react-scheduler';
 // import { sampleData, displayDate } from './events';
 import '@progress/kendo-theme-default/dist/all.css';
@@ -29,15 +29,17 @@ const MyScheduler: React.FC<SchedulerProps> = ({
   isLoading,
   fetchRequestsData,
 }) => {
+ 
+  const [getDisplayDate, setDisplay] = useState(new Date());
+  const currentYear = getDisplayDate.getFullYear();
+  const displayDate = new Date();
+
   const handleDateChange = React.useCallback(
     (event: SchedulerDateChangeEvent) => {
       setSelectedMonth(new Date(event.value).getMonth());
     },
     [setSelectedMonth]
   );
-
-  const currentYear = new Date().getFullYear();
-  const displayDate = new Date();
 
   const parseAdjust = (eventDate: Date | string) => {
     const date = new Date(eventDate);
@@ -58,7 +60,7 @@ const MyScheduler: React.FC<SchedulerProps> = ({
 
   const [, setShowRequestOffModal] = useState(false);
 
-  // This is to populate the modal when openening or creating a new request from the calendar.
+
   // async function fetchIndividualRequest() {
   //   try {
   //     const data = await PTOManagerAPI.getTimeOffPerEmp(4, 2024);
@@ -69,55 +71,118 @@ const MyScheduler: React.FC<SchedulerProps> = ({
   //   setIsLoading(false);
   // }
 
+
+
+
+  const updateNextMonth = () => {
+    const newDisplayDate = new Date(getDisplayDate);
+    newDisplayDate.setMonth(newDisplayDate.getMonth() + 1);
+    setDisplay(newDisplayDate);
+    setSelectedMonth(newDisplayDate.getMonth())
+      
+  }
+
+  const updatePrevMonth = () => {
+    const newDisplayDate = new Date(getDisplayDate);
+    newDisplayDate.setMonth(newDisplayDate.getMonth() - 1);
+    setDisplay(newDisplayDate);
+    setSelectedMonth(newDisplayDate.getMonth())
+  }
+
+  var options = { month: "long", year: "numeric" };
+
+
+ 
+
+
+
   return isLoading ? (
     <Loader />
   ) : (
     <>
-      <div className='flex flex-wrap w-100' >
-        <div className='flex'>
-          <div className='bg-grey w-100 ' >
-          <Button className="w-10 aspect-square hover:bg-blue-500">
-              <span className="text-2xl k-icon k-i-arrow-left w-full h-full"></span>
-            </Button>
-             <span className='text-sm'> April 2024 </span>
-           <Button className="w-10 aspect-square hover:bg-blue-500">
-              <span className="text-2xl k-icon k-i-arrow-right w-full h-full"></span>
-            </Button>
-         </div>
-      </div>
-        
+    
+       <div>
+       <div className="sale-calendar ">
+          <div className="header min-h-[30px] flex items-center border border-[#d6d6d6] px-[8px] py-[10px] border-b-0 bg-[#FFFFFF]">
+            <div className='flex justify-betwwen '>
+            <div className='w-[650px] h-[30px]'></div>
+              <div className='flex items-center min-w-[180px] gap-[20px]'>
+                <Button 
+                  onClick={updatePrevMonth}      
+                  fillMode='solid'        
+                  className="w-[45px] h-[30px] px-[4px] py-[4px] aspect-square hover:bg-[#2C5098]">
+                  <span className="text-lg k-icon k-i-arrow-left k-button-icon w-[16px] h-[16px] hover:text-bg-white"></span>
+                </Button> 
+                <div className='min-w-[120px] h-[26] text-[15px] text-center mt-1'>{getDisplayDate.toLocaleDateString("en-US", options)} </div>
+               <Button 
+                  onClick={updateNextMonth}
+                  className="w-[45px] h-[30px] px-[4px] py-[4px] aspect-square hover:bg-[#2C5098]">
+                   <span className="text-lg k-icon k-i-arrow-right w-full h-full hover:text-bg-slate-50"></span>
+                 </Button>
+              </div>
+              
+            
+                
+               </div>
 
-        <Scheduler
-           height={1500}
+            </div> 
+              
+          </div>
+
+
+          <div className='k-widget k-scheduler k-floatwrap k-pos-relative h-[745px] bg-[#f5f5f5]' tabIndex={-1} role='application' dir="ltr">
+            <div>
+            <Scheduler
+            height={1065}
             style={{
-               width: '925px',
+              width: "925px",
             }}
-           data={sampleData}
-           defaultDate={displayDate}
-           viewSlot={(props) => (
-            <CustomViewSlot
-               {...props}
-               currentMonth={selectedMonth}
-               fetchRequestsData={fetchRequestsData}
-             />
+            data={sampleData}
+            defaultDate={displayDate}
+            viewSlot={(props) => (
+              <CustomViewSlot
+                {...props}
+                currentMonth={selectedMonth}
+                fetchRequestsData={fetchRequestsData}
+              />
             )}
-         viewItem={(props) => (
-          <CustomViewItem {...props} fetchRequestsData={fetchRequestsData} />
+            viewItem={(props) => (
+              <CustomViewItem
+                {...props}
+                fetchRequestsData={fetchRequestsData}
+              />
             )}
             header={() => <React.Fragment />}
-         footer={() => <React.Fragment />}
-         onDateChange={handleDateChange}
-          form={(e) => (
-           <Form
-            IDNo={e.dataItem.id}
-            fetchRequestsData={fetchRequestsData}
-            setShowRequestOffModal={setShowRequestOffModal}
-        />
-      )}
-    >
-         <MonthView />
-    </Scheduler>
-      </div>
+            footer={() => <React.Fragment />}    
+            onDateChange={handleDateChange}
+  
+            form={(e) => (
+              <Form
+                IDNo={e.dataItem.id}
+                fetchRequestsData={fetchRequestsData}
+                setShowRequestOffModal={setShowRequestOffModal}
+              />
+            )}
+          >
+            <MonthView />
+          </Scheduler>
+            <div>
+
+            </div>
+
+
+            </div>
+            
+            
+            
+          </div>  
+       </div>
+
+
+          
+          
+
+        
       
     
     </>
@@ -127,3 +192,102 @@ const MyScheduler: React.FC<SchedulerProps> = ({
 };
 
 export default MyScheduler;
+
+
+
+{/***
+  header that works
+
+  
+          <div className="h-[40px]">
+            <div className="bg-grey flex justify-between items-center">
+              <div className="flex items-center ml-auto">
+                <Button className="w-8 h-6 aspect-square hover:bg-button">
+                  <span className="text-lg k-icon k-i-arrow-left w-full h-full"></span>
+                </Button>
+                <span className="text-sm bg-[#F1F5F9]">
+                  {" "}
+                  <SchedulerHeader />{" "}
+                </span>
+                <Button className="w-8 h-6 aspect-square hover:bg-button ml-2">
+                  <span className="text-lg k-icon k-i-arrow-right w-full h-full"></span>
+                </Button>
+                <span> </span>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+          buttons
+
+
+          <Button 
+                       className="w-[50px] h-8 aspect-square">
+                          <span className="text-lg k-icon k-i-arrow-left w-full h-full"></span>
+                      </Button>
+                      <SchedulerHeader />
+                      <Button 
+                       className="w-[50px] h-8 aspect-square hover:bg-button">
+                        <span className="text-lg k-icon k-i-arrow-right w-full h-full"></span>
+                      </Button>
+
+
+
+
+
+
+
+        <div className="min-h-[30px] flex items-center justify-between px-2 py-[10px] border border-[#D6D6D6]">
+         <div className="flex items-center gap-[10px]">
+          <button
+            className={`sched-action-button ${
+              viewMode === "calendar" ? "active-list" : ""
+            }`}
+            onClick={handleSwitchToCalendar}
+          >
+            <span
+              className="k-icon k-i-calendar k-button-icon"
+              role="presentation"
+            />
+          </button>
+          <button
+            className={`sched-action-button ${
+              viewMode === "list" ? "active-list" : ""
+            }`}
+            onClick={handleSwitchToList}
+          >
+            <span
+              className="k-icon k-i-table-row-insert-above k-button-icon"
+              role="presentation"
+            />
+          </button>
+        </div>
+        <div className="flex items-center gap-[10px]">
+          <button className="sched-action-button" onClick={handlePrevBtn}>
+            <span
+              className="k-icon k-i-arrow-left k-button-icon"
+              role="presentation"
+            />
+          </button>
+          <div className="w-[112px] text-center text-[13px]">
+            {formatDate(currentDate.toLocaleDateString())}
+          </div>
+          <button className="sched-action-button" onClick={handleNextBtn}>
+            <span
+              className="k-icon k-i-arrow-right k-button-icon"
+              role="presentation"
+            />D
+          </button>
+        </div>
+      </div>
+
+
+
+
+        
+        
+        */}

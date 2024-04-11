@@ -61,7 +61,7 @@ export const UserContextProvider: React.FC<UserContextProviderProps> = ({
   children,
 }) => {
   const [userCreds, setUserCreds] = useState<UserCreds | null>(null);
-  const [isUserLoggedIn, setIsUserLoggedIn] = useState<boolean>(true);
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState<boolean>(false);
   const [openedForms, setOpenedForms] = useState<OpenedFormType[]>([]);
   const [currentTaskPage, setCurrentTaskPage] = useState<number>(0);
   const [lastFormPosition, setLastFormPosition] = useState<PositionType>();
