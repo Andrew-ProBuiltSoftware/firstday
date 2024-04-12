@@ -9,9 +9,6 @@ type CalendarData = {
   year: number;
 };
 
-type OnNextButtonProps = {
-
-}
 
 const TimeOffCalendar = () => {
   const min = undefined;

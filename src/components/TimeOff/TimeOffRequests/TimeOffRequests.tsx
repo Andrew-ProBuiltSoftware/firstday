@@ -212,7 +212,7 @@ export const TimeOffRequests: React.FC<TimeOffRequestsProps> = ({
               className="text-left"
             />
             <Column 
-              field='NoteSection'
+              field='Notes'
               title='Notes'
               className='text-left'
             />

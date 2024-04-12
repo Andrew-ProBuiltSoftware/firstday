@@ -16,11 +16,11 @@ function App() {
          <MenuSidebar />
        <div className="h-[55px] bg-[#212121]">
         <div className='w-[280px] h-[50px] border border-slate-500 '>
-          <div className='ml-auto text-slate-50 text-xs ml-[22px] mt-[12px]'>
+          <div className='ml-auto text-slate-50 text-xs ml-[21px] mt-[12px]'>
             <span>ProBuilt Sample Company, Inc</span>
           </div>
-          <div className='text-slate-50 text-xs ml-[22px] mt-[1px]'>
-            <span>User: Placeholder</span>
+          <div className='text-slate-50 text-xs ml-[21px] mt-[1px]'>
+            <span>User: placeholder</span>
           </div>
         </div>
        </div>

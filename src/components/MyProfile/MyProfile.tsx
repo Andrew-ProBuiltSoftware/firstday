@@ -1,5 +1,5 @@
-import React, { useState, Dispatch, useEffect } from 'react';
-import { Scheduler, MonthView } from '@progress/kendo-react-scheduler';
+import React, { useState, Dispatch, useEffect, useRef } from 'react';
+import { Scheduler,  MonthView } from '@progress/kendo-react-scheduler';
 // import { sampleData, displayDate } from './events';
 import '@progress/kendo-theme-default/dist/all.css';
 import { CustomViewSlot } from './CustomViewSlot';
@@ -12,6 +12,11 @@ import {
   IHolidays,
 } from '../TimeOff/TimeOffRequests/types';
 import { Button } from '@progress/kendo-react-buttons'
+import './CustomCalendarFont.css'
+import { DateInput, end } from '@progress/kendo-react-dateinputs';
+import { start } from 'repl';
+
+
 
 interface SchedulerProps {
   selectedMonth: number;
@@ -21,6 +26,7 @@ interface SchedulerProps {
   holidays: IHolidays[];
   fetchRequestsData: () => Promise<void>;
 }
+
 
 const MyScheduler: React.FC<SchedulerProps> = ({
   selectedMonth,
@@ -33,13 +39,20 @@ const MyScheduler: React.FC<SchedulerProps> = ({
   const [getDisplayDate, setDisplay] = useState(new Date());
   const currentYear = getDisplayDate.getFullYear();
   const displayDate = new Date();
+  
+  
 
   const handleDateChange = React.useCallback(
     (event: SchedulerDateChangeEvent) => {
-      setSelectedMonth(new Date(event.value).getMonth());
+
+      const newDate = new Date(event.value)
+      setSelectedMonth(newDate.getMonth());
+      setDisplay(newDate)
     },
-    [setSelectedMonth]
+    [setSelectedMonth, setDisplay]
   );
+
+
 
   const parseAdjust = (eventDate: Date | string) => {
     const date = new Date(eventDate);
@@ -72,21 +85,31 @@ const MyScheduler: React.FC<SchedulerProps> = ({
   // }
 
 
+  
+
+    
+
 
 
   const updateNextMonth = () => {
-    const newDisplayDate = new Date(getDisplayDate);
-    newDisplayDate.setMonth(newDisplayDate.getMonth() + 1);
-    setDisplay(newDisplayDate);
-    setSelectedMonth(newDisplayDate.getMonth())
-      
+
+    const nextMonth = new Date(getDisplayDate);
+    nextMonth.setMonth(nextMonth.getMonth() + 1);
+    setDisplay(nextMonth);
+    setSelectedMonth(nextMonth.getMonth())
+    displayDate.setMonth(nextMonth.getMonth());
+
+
+    
   }
 
   const updatePrevMonth = () => {
-    const newDisplayDate = new Date(getDisplayDate);
-    newDisplayDate.setMonth(newDisplayDate.getMonth() - 1);
-    setDisplay(newDisplayDate);
-    setSelectedMonth(newDisplayDate.getMonth())
+    const prevMonth = new Date(getDisplayDate);
+    prevMonth.setMonth(prevMonth.getMonth() - 1);
+    setDisplay( prevMonth);
+    setSelectedMonth(prevMonth.getMonth())
+    displayDate.setMonth(prevMonth.getMonth());
+
   }
 
   var options = { month: "long", year: "numeric" };
@@ -105,45 +128,44 @@ const MyScheduler: React.FC<SchedulerProps> = ({
        <div className="sale-calendar ">
           <div className="header min-h-[30px] flex items-center border border-[#d6d6d6] px-[8px] py-[10px] border-b-0 bg-[#FFFFFF]">
             <div className='flex justify-betwwen '>
-            <div className='w-[650px] h-[30px]'></div>
+            <div className='w-[700px] h-[30px]'></div>
               <div className='flex items-center min-w-[180px] gap-[20px]'>
                 <Button 
-                  onClick={updatePrevMonth}      
-                  fillMode='solid'        
-                  className="w-[45px] h-[30px] px-[4px] py-[4px] aspect-square hover:bg-[#2C5098]">
-                  <span className="text-lg k-icon k-i-arrow-left k-button-icon w-[16px] h-[16px] hover:text-bg-white"></span>
+                  onClick={updatePrevMonth} 
+                  
+                  fillMode='solid'    
+                  className="w-[45px] h-[30px] px-[4px] py-[4px] aspect-square hover:bg-[#0d3f75]">
+                  <span className="text-lg k-icon k-i-arrow-left k-button-icon  w-[45px] h-[30px] hover:text-slate-50"></span>
                 </Button> 
                 <div className='min-w-[120px] h-[26] text-[15px] text-center mt-1'>{getDisplayDate.toLocaleDateString("en-US", options)} </div>
                <Button 
                   onClick={updateNextMonth}
-                  className="w-[45px] h-[30px] px-[4px] py-[4px] aspect-square hover:bg-[#2C5098]">
-                   <span className="text-lg k-icon k-i-arrow-right w-full h-full hover:text-bg-slate-50"></span>
+
+                  fillMode={"solid"}
+                  className="w-[45px] h-[30px] px-[4px] py-[4px] aspect-square hover:bg-[#0d3f75]">
+                   <span className="text-lg k-icon k-i-arrow-right w-[45px] h-[30px] hover:text-slate-50"></span>
                  </Button>
               </div>
-              
-            
-                
+
                </div>
-
-            </div> 
-              
+            </div>         
           </div>
-
-
-          <div className='k-widget k-scheduler k-floatwrap k-pos-relative h-[745px] bg-[#f5f5f5]' tabIndex={-1} role='application' dir="ltr">
+          <div className='k-widget k-scheduler k-floatwrap k-pos-relative h-[745px] bg-[#f5f5f5]' tabIndex={1} role='application' dir="ltr">
             <div>
             <Scheduler
-            height={1065}
+            height={1082}
             style={{
-              width: "925px",
+              width: "975px",
             }}
             data={sampleData}
             defaultDate={displayDate}
+            date={getDisplayDate}
             viewSlot={(props) => (
               <CustomViewSlot
                 {...props}
                 currentMonth={selectedMonth}
                 fetchRequestsData={fetchRequestsData}
+                expandable={false}
               />
             )}
             viewItem={(props) => (
@@ -165,6 +187,7 @@ const MyScheduler: React.FC<SchedulerProps> = ({
             )}
           >
             <MonthView />
+            
           </Scheduler>
             <div>
 
@@ -176,10 +199,11 @@ const MyScheduler: React.FC<SchedulerProps> = ({
             
             
           </div>  
+          
        </div>
 
 
-          
+    
           
 
         
@@ -285,9 +309,56 @@ export default MyScheduler;
         </div>
       </div>
 
+      attempt 3:
+        const [isLoadingData, setIsLoadingData] = useState(true);
 
+      
+  const fetchData = async () =>{
+    try{
+      setIsLoadingData(true);
+      await fetchRequestsData;
+    }
+    catch (error){
+      console.error("Error" , error);
+    } 
+    finally{
+      setIsLoadingData(false);
+    }
+  }
 
 
         
+
+
+const handleOverride = React.useCallback(
+    (event: SchedulerDateChangeEvent) => { 
+      if(event.value){
+        setDisplay(event.value);
+      }
+    },[setDisplay]
+  );
+
+
+  const [isLoadingData, setIsLoadingData] = useState(true);
+
+      
+  const fetchData = async (month: number) =>{
+    try{
+      setIsLoadingData(true);
+      await fetchRequestsData();
+    }
+    catch (e){
+      console.error("Error");
+    } 
+    finally{
+      setIsLoadingData(false);
+    }
+  }
+
+
+
+
+
+
         
         */}
